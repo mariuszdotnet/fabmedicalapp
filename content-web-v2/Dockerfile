@@ -9,7 +9,7 @@ COPY content-web-v2/package.json /usr/src/app/
 RUN npm install
 
 # Bundle app source
-COPY . /usr/src/app
+COPY content-web-v2 /usr/src/app
 
 EXPOSE 3000
 CMD [ "npm", "start" ]
