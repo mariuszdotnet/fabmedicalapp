@@ -5,12 +5,11 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 # Install app dependencies
-COPY package.json bower.json /usr/src/app/
-RUN npm install -g bower
-RUN bower install
+COPY content-web-v2/package.json /usr/src/app/
+RUN npm install
 
 # Bundle app source
-COPY . /usr/src/app
+COPY content-web-v2 /usr/src/app
 
 EXPOSE 3000
 CMD [ "npm", "start" ]
